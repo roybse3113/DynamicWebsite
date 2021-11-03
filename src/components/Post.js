@@ -32,6 +32,13 @@ const Post = ({
           >
             Edit Post
           </button>
+          <div>
+            <p className="postID">
+              Post ID:
+              {' '}
+              {id}
+            </p>
+          </div>
         </div>
       ) : (
         <div>
