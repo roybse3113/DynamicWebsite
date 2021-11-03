@@ -1,8 +1,8 @@
 import { ADD_INTRO } from '../actions'
 
 const default_state = {
-  image: 'a',
-  description: 'a',
+  image: '',
+  description: '',
 }
 
 const IntroReducer = (state = default_state, action) => {

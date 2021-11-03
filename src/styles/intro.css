@@ -1,0 +1,9 @@
+div.intro {
+  background-color: aliceblue;
+  padding: 10px;
+}
+
+button.editIntro {
+  margin-top: 50px;
+  display: inline-block;
+}

@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import { connect } from 'react-redux'
 import Input from './Input'
+import '../styles/post.css'
 
 import { addPost } from '../actions'
 
@@ -27,7 +28,7 @@ const PostForm = ({ dispatchAddPost }) => {
   }
 
   return (
-    <div>
+    <div className='postAddForm'>
       {show ? (
         <div>
           <h3>Title</h3>

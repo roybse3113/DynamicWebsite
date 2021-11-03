@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import { connect } from 'react-redux'
 import Input from './Input'
 import IntroForm from './IntroForm'
-import '../styles/post.css'
+import '../styles/intro.css'
 
 import { addIntro } from '../actions'
 import IntroDisplay from './IntroDisplay'
@@ -16,11 +16,15 @@ const Intro = ({ introInfo, id, dispatchAddIntro }) => {
       <h1>Hey This is Me!</h1>
       {!editMode ? (
         <div>
-          {image}
+          <img src={image} alt={image} />
           <p> </p>
           {description}
           <p> </p>
-          <button type='button' onClick={() => setEdit(!editMode)}>
+          <button
+            className='editIntro'
+            type='button'
+            onClick={() => setEdit(!editMode)}
+          >
             Edit
           </button>
         </div>

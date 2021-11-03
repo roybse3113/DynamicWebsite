@@ -25,7 +25,9 @@ const Post = ({
       {!editMode ? (
         <div>
           <h3>{title}</h3>
-          <h2>{image}</h2>
+          <h2>
+            <img src={image} alt={image} />
+          </h2>
           <p>{description}</p>
           <button type='button' onClick={() => setEdit(!editMode)}>
             Edit Post

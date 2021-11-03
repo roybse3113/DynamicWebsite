@@ -8,15 +8,15 @@ import PostList from './components/PostList'
 import PostAddForm from './components/PostAddForm'
 import Intro from './components/Intro'
 import IntroDisplay from './components/IntroDisplay'
-import './styles/post.css'
+import Blog from './components/Blog'
+import './styles/app.css'
 
 const App = () => (
   <div>
     <div className='intro'>
       <Intro />
     </div>
-    <PostAddForm />
-    <PostList />
+    <Blog />
   </div>
 )
 export default App

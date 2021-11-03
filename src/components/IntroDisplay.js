@@ -2,6 +2,7 @@ import React from 'react'
 import { connect } from 'react-redux'
 import { completeToDo, STATUS } from '../actions'
 import Post from './Post'
+import Intro from './Intro'
 
 const { SHOW_ALL, SHOW_ACTIVE, SHOW_COMPLETED } = STATUS
 
