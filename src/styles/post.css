@@ -1,14 +1,59 @@
 div.post {
-  background-color: lightblue;
+  background-color: rgb(207, 225, 231);
+  margin: auto;
+  width: 500px;
   box-shadow: 0px 0px 10px grey;
-  width: 350px;
+  word-wrap: break-word;
   text-align: center;
-  padding: 25px;
+  padding: 20px;
+  margin-bottom: 20px;
 }
 
 div.postAddForm {
   padding: 10px;
-  box-shadow: 0px 0px 10px grey;
-  width: 250px;
+  box-shadow: 0px 0px 10px rgb(177, 168, 168);
   text-align: center;
+  margin: auto;
+  width: 350px;
+  margin-bottom: 50px;
+}
+
+button.delete {
+  background-color: red;
+}
+
+button.save {
+  background-color: green;
+}
+
+div.postAddFormContents {
+  padding: 15px;
+}
+
+input.Title {
+  margin: 10px;
+  text-align: left;
+  padding: 5px;
+}
+
+input.Image {
+  margin: 10px;
+  padding: 5px;
+}
+
+input.Description {
+  margin: 10px;
+  padding: 5px;
+}
+
+h3.postTitle {
+  padding: 5px;
+}
+
+p.postDescription {
+  padding: 5px;
+}
+
+button.addPost {
+  background-color: rgb(9, 16, 19);
 }

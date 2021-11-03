@@ -4,6 +4,18 @@ div.intro {
 }
 
 button.editIntro {
-  margin-top: 50px;
+  margin-top: 20px;
   display: inline-block;
+}
+
+h1.introHeader {
+  color: rgb(43, 155, 199);
+}
+
+img.introImage {
+  padding: 5px;
+}
+
+p.introDescription {
+  padding: 5px;
 }

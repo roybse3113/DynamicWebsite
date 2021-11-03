@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import { connect } from 'react-redux'
-import Input from './Input'
+import '../styles/app.css'
+import '../styles/post.css'
 
 import { addIntro } from '../actions'
 
@@ -16,17 +17,23 @@ const IntroForm = ({
   const [currDescription, setDescription] = useState(description)
 
   return (
-    <div>
+    <div className="introForm">
       <h3>Image</h3>
-      <input value={currImage} onChange={e => setImage(e.target.value)} />
+      <input
+        className="imageIntro"
+        value={currImage}
+        onChange={e => setImage(e.target.value)}
+      />
       <h3>Description</h3>
       <input
+        className="descriptionIntro"
         value={currDescription}
         onChange={e => setDescription(e.target.value)}
       />
       <p> </p>
       <button
-        type='button'
+        className="save"
+        type="button"
         onClick={() => {
           dispatchAddIntro(currImage, currDescription)
           setEdit(!editMode)
@@ -34,7 +41,7 @@ const IntroForm = ({
       >
         Save
       </button>
-      <button type='button' onClick={() => setEdit(!editMode)}>
+      <button type="button" onClick={() => setEdit(!editMode)}>
         Cancel
       </button>
     </div>
@@ -42,8 +49,7 @@ const IntroForm = ({
 }
 
 const mapDispatchToProps = dispatch => ({
-  dispatchAddIntro: (image, description) =>
-    dispatch(addIntro(image, description)),
+  dispatchAddIntro: (image, description) => dispatch(addIntro(image, description)),
 })
 
 export default connect(null, mapDispatchToProps)(IntroForm)

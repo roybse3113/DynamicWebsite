@@ -2,22 +2,10 @@ import React from 'react'
 import { connect } from 'react-redux'
 import { completeToDo, STATUS } from '../actions'
 import Post from './Post'
-
-const { SHOW_ALL, SHOW_ACTIVE, SHOW_COMPLETED } = STATUS
-
-const filterTodos = (filter, todos) => {
-  switch (filter) {
-    case SHOW_ACTIVE:
-      return todos.filter(todo => !todo.completed)
-    case SHOW_COMPLETED:
-      return todos.filter(todo => todo.completed)
-    default:
-      return todos
-  }
-}
+import '../styles/post.css'
 
 const PostList = ({ posts }) => (
-  <div>
+  <div className="postList">
     {posts.map(post => (
       <div key={post.id}>
         <Post

@@ -1,6 +1,5 @@
 import React, { useState } from 'react'
 import { connect } from 'react-redux'
-import Input from './Input'
 import PostForm from './PostForm'
 import '../styles/post.css'
 
@@ -15,21 +14,22 @@ const Post = ({
   dispatchEditPost,
   dispatchDeletePost,
 }) => {
-  // const [title, setTitle] = useState('')
-  // const [image, setImage] = useState('')
-  // const [description, setDescription] = useState('')
   const [editMode, setEdit] = useState(false)
 
   return (
-    <div className='post'>
+    <div className="post">
       {!editMode ? (
         <div>
-          <h3>{title}</h3>
+          <h3 className="postTitle">{title}</h3>
           <h2>
             <img src={image} alt={image} />
           </h2>
-          <p>{description}</p>
-          <button type='button' onClick={() => setEdit(!editMode)}>
+          <p className="postDescription">{description}</p>
+          <button
+            className="edit"
+            type="button"
+            onClick={() => setEdit(!editMode)}
+          >
             Edit Post
           </button>
         </div>
@@ -43,7 +43,11 @@ const Post = ({
             editMode={editMode}
             setEdit={setEdit}
           />
-          <button type='button' onClick={() => dispatchDeletePost(id)}>
+          <button
+            className="delete"
+            type="button"
+            onClick={() => dispatchDeletePost(id)}
+          >
             Delete Post
           </button>
         </div>
@@ -53,8 +57,7 @@ const Post = ({
 }
 
 const mapDispatchToProps = dispatch => ({
-  dispatchEditPost: (id, title, image, description) =>
-    dispatch(editPost(id, title, image, description)),
+  dispatchEditPost: (id, title, image, description) => dispatch(editPost(id, title, image, description)),
   dispatchDeletePost: id => dispatch(deletePost(id)),
 })
 

@@ -1,11 +1,9 @@
 import React, { useState } from 'react'
 import { connect } from 'react-redux'
-import Input from './Input'
 import IntroForm from './IntroForm'
 import '../styles/intro.css'
 
 import { addIntro } from '../actions'
-import IntroDisplay from './IntroDisplay'
 
 const Intro = ({ introInfo, id, dispatchAddIntro }) => {
   const [editMode, setEdit] = useState(false)
@@ -13,16 +11,16 @@ const Intro = ({ introInfo, id, dispatchAddIntro }) => {
 
   return (
     <div>
-      <h1>Hey This is Me!</h1>
+      <h1 className="introHeader">Hey This is Me!</h1>
       {!editMode ? (
         <div>
-          <img src={image} alt={image} />
-          <p> </p>
+          <img className="introImage" src={image} alt={image} />
+          <p className="introDescription"> </p>
           {description}
           <p> </p>
           <button
-            className='editIntro'
-            type='button'
+            className="editIntro"
+            type="button"
             onClick={() => setEdit(!editMode)}
           >
             Edit
@@ -44,8 +42,7 @@ const Intro = ({ introInfo, id, dispatchAddIntro }) => {
 }
 
 const mapDispatchToProps = dispatch => ({
-  dispatchAddIntro: (image, description) =>
-    dispatch(addIntro(image, description)),
+  dispatchAddIntro: (image, description) => dispatch(addIntro(image, description)),
 })
 const mapStateToProps = state => ({
   introInfo: state.introInfo,

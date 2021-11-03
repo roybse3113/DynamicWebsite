@@ -1,6 +1,4 @@
 import {
-  ADD_TO_DO,
-  COMPLETE_TO_DO,
   ADD_POST,
   EDIT_POST,
   DELETE_POST,
@@ -9,7 +7,9 @@ import {
 const default_state = []
 
 const PostReducer = (state = default_state, action) => {
-  const { type, id, title, image, description, editMode } = action
+  const {
+    type, id, title, image, description,
+  } = action
 
   switch (type) {
     case ADD_POST:

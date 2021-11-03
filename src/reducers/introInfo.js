@@ -6,7 +6,9 @@ const default_state = {
 }
 
 const IntroReducer = (state = default_state, action) => {
-  const { type, id, image, description } = action
+  const {
+    type, image, description,
+  } = action
 
   switch (type) {
     case ADD_INTRO:

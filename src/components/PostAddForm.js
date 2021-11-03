@@ -1,6 +1,5 @@
 import React, { useState } from 'react'
 import { connect } from 'react-redux'
-import Input from './Input'
 import '../styles/post.css'
 
 import { addPost } from '../actions'
@@ -28,30 +27,44 @@ const PostForm = ({ dispatchAddPost }) => {
   }
 
   return (
-    <div className='postAddForm'>
+    <div className="postAddForm">
       {show ? (
-        <div>
+        <div className="postAddFormContents">
           <h3>Title</h3>
-          <input onChange={e => setTitle(e.target.value)} />
+          <input
+            className="Title"
+            onChange={e => setTitle(e.target.value)}
+          />
+          {' '}
           <h3>Image</h3>
-          <input onChange={e => setImage(e.target.value)} />
+          <input className="Image" onChange={e => setImage(e.target.value)} />
           <h3>Description</h3>
-          <input onChange={e => setDescription(e.target.value)} />
+          {' '}
+          <input
+            className="Description"
+            onChange={e => setDescription(e.target.value)}
+          />
           <p> </p>
+          {' '}
           <button
-            type='button'
+            className="save"
+            type="button"
             onClick={e => {
               functions(e)
             }}
           >
             Save
           </button>
-          <button type='button' onClick={() => setShow(!show)}>
+          <button type="button" onClick={() => setShow(!show)}>
             Cancel
           </button>
         </div>
       ) : (
-        <button type='button' onClick={() => setShow(!show)}>
+        <button
+          className="addPost"
+          type="button"
+          onClick={() => setShow(!show)}
+        >
           Add Post
         </button>
       )}
@@ -60,8 +73,7 @@ const PostForm = ({ dispatchAddPost }) => {
 }
 
 const mapDispatchToProps = dispatch => ({
-  dispatchAddPost: (title, image, description) =>
-    dispatch(addPost(title, image, description)),
+  dispatchAddPost: (title, image, description) => dispatch(addPost(title, image, description)),
 })
 
 export default connect(null, mapDispatchToProps)(PostForm)

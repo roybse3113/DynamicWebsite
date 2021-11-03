@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import { connect } from 'react-redux'
-import Input from './Input'
+import '../styles/post.css'
 
 import { addPost, deletePost, editPost } from '../actions'
 
@@ -20,19 +20,29 @@ const PostForm = ({
   const [currDescription, setDescription] = useState(description)
 
   return (
-    <div>
+    <div className="editForm">
       <h3>Title</h3>
-      <input value={currTitle} onChange={e => setTitle(e.target.value)} />
+      <input
+        className="Title"
+        value={currTitle}
+        onChange={e => setTitle(e.target.value)}
+      />
       <h3>Image</h3>
-      <input value={currImage} onChange={e => setImage(e.target.value)} />
+      <input
+        className="Image"
+        value={currImage}
+        onChange={e => setImage(e.target.value)}
+      />
       <h3>Description</h3>
       <input
+        className="Description"
         value={currDescription}
         onChange={e => setDescription(e.target.value)}
       />
       <p> </p>
       <button
-        type='button'
+        type="button"
+        className="save"
         onClick={() => {
           dispatchEditPost(id, currTitle, currImage, currDescription)
           setEdit(!editMode)
@@ -40,7 +50,11 @@ const PostForm = ({
       >
         Save
       </button>
-      <button type='button' onClick={() => setEdit(!editMode)}>
+      <button
+        className="Cancel"
+        type="button"
+        onClick={() => setEdit(!editMode)}
+      >
         Cancel
       </button>
     </div>
@@ -48,10 +62,8 @@ const PostForm = ({
 }
 
 const mapDispatchToProps = dispatch => ({
-  dispatchAddPost: (title, image, description) =>
-    dispatch(addPost(title, image, description)),
-  dispatchEditPost: (id, title, image, description) =>
-    dispatch(editPost(id, title, image, description)),
+  dispatchAddPost: (title, image, description) => dispatch(addPost(title, image, description)),
+  dispatchEditPost: (id, title, image, description) => dispatch(editPost(id, title, image, description)),
   dispatchDeletePost: id => dispatch(deletePost(id)),
 })
 
